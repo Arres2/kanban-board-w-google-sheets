@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ContexProvider from "static/components/context";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +22,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
             {children}
 
         </ContexProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
