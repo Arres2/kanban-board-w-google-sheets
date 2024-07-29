@@ -264,9 +264,9 @@ export default function Board(props: Props) {
               Add Column
             </button>
           </div>
-          {createPortal(
+          {docEnv && createPortal(
             <DragOverlay>
-              {activeColumn && docEnv && (
+              {activeColumn &&  (
                 <ColumnContainer
                   column={activeColumn}
                   deleteColumn={deleteColumn}
@@ -278,7 +278,7 @@ export default function Board(props: Props) {
                   deleteLead={deleteLead}
                 />
               )}
-              {activeLead && docEnv && (
+              {activeLead &&  (
                 <LeadContainer lead={activeLead} deleteLead={deleteLead} />
               )}
             </DragOverlay>,
