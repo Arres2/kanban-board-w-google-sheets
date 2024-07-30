@@ -17,6 +17,7 @@ import {
 import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import LeadContainer from "./leadContainer";
+import { sendEmail } from "static/actions/email-actions";
 
 
 interface Props {
@@ -120,6 +121,7 @@ export default function Board(props: Props) {
     handleChange({ ...columnChange, columns: columns, });
     setActiveColumn(null);
     setActiveLead(null);
+    if(columnChange.to === "Win")sendEmail()
     setColumnChange({ from: null, to: null });
     if (!over) return;
     const activeColumnId = active.id;
